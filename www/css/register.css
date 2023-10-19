@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(../img/background.jpg);
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 400px;
+  min-height: 400px;
+  background: var(--light);
+  border-radius: 5px;
+  padding: 40px 30px;
+}
+
+.container .title {
+  color: var(--dark);
+  font-weight: 800;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.container .form .input-group {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 25px;
+}
+
+.container .form .input-group input {
+  width: calc(100% - 40px);
+  height: 100%;
+  color: var(--dark);
+  background-color: var(--light);
+  padding: 0 20px;
+  font-size: 20px;
+  border-style: solid;
+  border-color: var(--primary);
+  border-radius: 25px;
+  outline: 0;
+}
+
+.container .form .input-group .btn {
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary);
+  font-size: 20px;
+  border: 3px;
+  border-radius: 25px;
+}
+
+.container .form .input-group .btn:hover {
+  background-color: var(--primary-hover);
+}
+
+.container .form .login-register-text {
+  color: var(--dark);
+}
+
+.container .form .login-register-text a {
+  text-decoration: none;
+  color: var(--primary);
+}

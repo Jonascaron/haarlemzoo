@@ -39,7 +39,7 @@ $key = generateConfirmationKey(40);
 
 try {
   // prepare sql and bind parameters
-  $stmt = $conn->prepare("INSERT INTO user (name, email, password, sleutel) VALUES (:name, :email, :password, :key)");
+  $stmt = $conn->prepare("INSERT INTO user (name, email, password, user_key) VALUES (:name, :email, :password, :key)");
   $stmt->bindParam(':name', $name);
   $stmt->bindParam(':email', $email);
   $stmt->bindParam(':password', $hashed_password);

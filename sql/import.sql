@@ -3,8 +3,7 @@ CREATE TABLE user (
   name VARCHAR(255),
   email VARCHAR(255),
   password VARCHAR(255),
-  registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  user_key VARCHAR(255)
+  registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE profile (
@@ -37,7 +36,8 @@ CREATE TABLE admin (
 );
 
 CREATE TABLE ticket_type (
-  ticket_type_id INT PRIMARY KEY, AUTO_INCREMENT
+  ticket_type_id INT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(255),
   description VARCHAR(255),
   price DECIMAL(10, 2)
 );

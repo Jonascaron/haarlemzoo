@@ -32,27 +32,16 @@ if ($stmt->rowCount() != 0) {
 $password = $_POST['password'];
 
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-include "functions.php";
 
-$key = generateConfirmationKey(40);
+$stmt = $conn->prepare("INSERT INTO user (name, email, password) VALUES (:name, :email, :password)");
+$stmt->bindParam(':name', $name);
+$stmt->bindParam(':email', $email);
+$stmt->bindParam(':password', $hashed_password);
 
-
-try {
-  // prepare sql and bind parameters
-  $stmt = $conn->prepare("INSERT INTO user (name, email, password, user_key) VALUES (:name, :email, :password, :key)");
-  $stmt->bindParam(':name', $name);
-  $stmt->bindParam(':email', $email);
-  $stmt->bindParam(':password', $hashed_password);
-  $stmt->bindParam(':key', $key);
-
-  var_dump($key);
-
-  $name = $_POST['name'];
-  if ($stmt->execute()) {
-    echo 'je bent geregristreerd';
-    include "send_email.php";
-  }
-} catch (PDOException $e) {
-
-  echo "SQL Error: " . $e->getMessage();
+$name = $_POST['name'];
+if ($stmt->execute()) {
+  echo 'je bent geregristreerd';
+  $subject = 'Registratie email';
+  $message = 'U bent nu geregistreerd';
+  include "send_email.php";
 }

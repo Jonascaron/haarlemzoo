@@ -109,7 +109,7 @@
         }
         ?>
       </div>
-      <a href="" class="btn btn-primary">Buy Ticket<i class="fa fa-arrow-right ms-3"></i></a>
+      <a href="buy_ticket.php" class="btn btn-primary">Buy Ticket<i class="fa fa-arrow-right ms-3"></i></a>
     </div>
   </nav>
   <!-- Navbar End -->

@@ -5,8 +5,6 @@ use PHPMailer\PHPMailer\Exception;
 
 require '../vendor/autoload.php'; // Include PHPMailer library
 
-$subject = 'verificatie email';
-$message = 'verificatie email';
 
 if($_SERVER['REQUEST_METHOD'] === "POST") {
   try {
@@ -20,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
     $mail->Port = 1025;
 
     //Recipients
-    $mail->setFrom('respons@haarlemzoo.com');
+    $mail->setFrom('no_reply@haarlemzoo.com');
     $mail->addAddress($_POST['email']);
 
     //Content

@@ -17,15 +17,23 @@ CREATE TABLE ticket (
   ticket_id INT PRIMARY KEY AUTO_INCREMENT,
   user_id INT,
   date_time_purchased DATETIME,
-  ticket_type VARCHAR(50),
-  price DECIMAL(10, 2)
+  ticket_type INT,
+  price INT(100)
 );
 
 CREATE TABLE merchandise (
   merchandise_id INT PRIMARY KEY AUTO_INCREMENT,
+  user_id INT,
+  date_time_purchased DATETIME,
+  merchandise_type INT,
+  price INT(100)
+);
+
+CREATE TABLE merchandise_type (
+  merchandise_id INT PRIMARY KEY AUTO_INCREMENT,
   title VARCHAR(255),
   description VARCHAR(255),
-  price DECIMAL(10, 2),
+  price INT(100),
   stock INT
 );
 
@@ -40,5 +48,5 @@ CREATE TABLE ticket_type (
   ticket_type_id INT PRIMARY KEY AUTO_INCREMENT,
   title VARCHAR(255),
   description VARCHAR(255),
-  price DECIMAL(10, 2)
+  price INT(100)
 );

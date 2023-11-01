@@ -25,7 +25,7 @@ CREATE TABLE merchandise (
   merchandise_id INT PRIMARY KEY AUTO_INCREMENT,
   user_id INT,
   date_time_purchased DATETIME,
-  merchandise_type INT,
+  merchandise_type_id INT,
   price INT(100)
 );
 

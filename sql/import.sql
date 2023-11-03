@@ -16,7 +16,7 @@ CREATE TABLE profile (
 CREATE TABLE ticket (
   ticket_id INT PRIMARY KEY AUTO_INCREMENT,
   user_id INT,
-  date_time_purchased DATETIME,
+  date_time_purchased TIMESTAMP,
   ticket_type INT,
   price INT(100)
 );
@@ -24,7 +24,7 @@ CREATE TABLE ticket (
 CREATE TABLE merchandise (
   merchandise_id INT PRIMARY KEY AUTO_INCREMENT,
   user_id INT,
-  date_time_purchased DATETIME,
+  date_time_purchased TIMESTAMP,
   merchandise_type_id INT,
   price INT(100)
 );
